@@ -84,7 +84,7 @@ app.post('/articles', function(request, response) {
   function queryTwo() {
     client.query(
       // DONE: What is the purpose of the $1 in the following line of code?
-      // The $1 acts as a variable which is populated by information from the HTTP request in the array below.
+      // The $1 acts as a template literal variable which is populated by information from the HTTP request in the array below.
       `SELECT author_id FROM authors WHERE author=$1`, // DONE: Write a SQL query to retrieve the author_id from the authors table for the new article
       [request.body.author], // DONE: Add the author name as data for the SQL query
       function(err, result) {
